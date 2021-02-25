@@ -1,5 +1,6 @@
 require "net/http"
 require_relative "response"
+require_relative "coupons_requests"
 
 module Jumbo
   class Client
@@ -26,16 +27,20 @@ module Jumbo
       get_request("/api/lms/ping")
     end
 
-    def get_request(path, params = nil, request_params = {})
-      url = build_url(path)
-      req = build_get_request(url, params)
-      perform_request(url, req, request_params)
+    def coupons_requests
+      @coupons_requests ||= CouponsRequests.new(self)
     end
 
-    def post_request(path, params, request_params = {})
+    def get_request(path, params = nil)
+      url = build_url(path)
+      req = build_get_request(url, params)
+      perform_request(url, req)
+    end
+
+    def post_request(path, params)
       url = build_url(path)
       request = build_post_request(url, params)
-      perform_request(url, request, request_params)
+      perform_request(url, request)
     end
 
     protected
@@ -58,19 +63,16 @@ module Jumbo
       end
     end
 
-    def perform_request(url, request, request_params)
+    def perform_request(url, request)
       http_new = Net::HTTP.new(url.hostname, url.port)
-      manipulate_http_request(http_new, request_params)
+      manipulate_http_request(http_new)
       Response.from(@logger.call(url, request) { http_new.start { |http| http.request(request) } })
     end
 
-    def manipulate_http_request(http_new, request_params)
+    def manipulate_http_request(http_new)
       http_new.use_ssl = @base_url.start_with?("https")
       http_new.open_timeout = DEFAULT_TIMEOUT
       http_new.read_timeout = DEFAULT_TIMEOUT
-      request_params.each do |key, val|
-        http_new.public_send("#{key}=", val)
-      end
     end
 
     def header_params(request)

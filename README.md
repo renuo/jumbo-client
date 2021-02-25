@@ -29,6 +29,9 @@ Contact the Jumbo LMS team to receive further instructions regarding the Api Key
 Jumbo::Client.new.ping
 # -> { timestamp: 12345}
 
+request = Jumbo::CouponsRequest.new(coupon_assignment_event_type: event_type, loyalty_code: '1234567890')
+Jumbo::Client.new.coupons_requests.create(request)
+# -> { "coupons_request": { ... }}
 ```
 ## Development
 
