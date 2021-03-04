@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "jumbo-client"
-  spec.version = "0.2.0"
+  spec.version = "0.3.0"
   spec.authors = ["Alessandro Rodi"]
   spec.email = ["alessandro.rodi@renuo.ch"]
 

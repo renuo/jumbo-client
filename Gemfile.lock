@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-client (0.2.0)
+    jumbo-client (0.3.0)
       activemodel (>= 5.0.0)
 
 GEM

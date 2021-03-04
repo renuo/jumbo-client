@@ -25,4 +25,14 @@ RSpec.describe Jumbo::Client do
       ))
     end
   end
+
+  describe "#employees" do
+    it "retrieves a list of employees" do
+      response = instance.employees.index
+      expect(response).to be_ok
+      expect(response.json[:employees].length).to be > 0
+      expect(response.json[:employees].first)
+        .to match a_hash_including(:id, :first_name, :last_name, :email, :promo_code, :reference_code, :shop_id)
+    end
+  end
 end

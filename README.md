@@ -32,6 +32,9 @@ Jumbo::Client.new.ping
 request = Jumbo::CouponsRequest.new(coupon_assignment_event_type: event_type, loyalty_code: '1234567890')
 Jumbo::Client.new.coupons_requests.create(request)
 # -> { "coupons_request": { ... }}
+
+Jumbo::Client.new.employees.index
+# -> { "employees": [{ "id": 12, "first_name": "Alessandro", "last_name": "Rodi", "email": "alessandro.rodi@renuo.ch", "promo_code": "1234", "reference_code": "abcd1234", "shop_id": "4567" }] }
 ```
 ## Development
 

@@ -1,6 +1,7 @@
 require "net/http"
 require_relative "response"
 require_relative "coupons_requests"
+require_relative "employees"
 
 module Jumbo
   class Client
@@ -29,6 +30,10 @@ module Jumbo
 
     def coupons_requests
       @coupons_requests ||= CouponsRequests.new(self)
+    end
+
+    def employees
+      @employees ||= Employees.new(self)
     end
 
     def get_request(path, params = nil)
