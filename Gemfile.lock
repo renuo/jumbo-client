@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    jumbo-client (0.3.0)
+    jumbo-client (0.3.1)
       activemodel (>= 5.0.0)
+      zeitwerk (>= 2.0.0)
 
 GEM
   remote: https://rubygems.org/

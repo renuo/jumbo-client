@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "jumbo-client"
-  spec.version = "0.3.0"
+  spec.version = "0.3.1"
   spec.authors = ["Alessandro Rodi"]
   spec.email = ["alessandro.rodi@renuo.ch"]
 
@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activemodel", ">= 5.0.0"
+  spec.add_dependency "zeitwerk", ">= 2.0.0"
 end

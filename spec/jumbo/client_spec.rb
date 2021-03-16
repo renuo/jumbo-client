@@ -1,5 +1,4 @@
 require "dotenv/load"
-require "jumbo/coupons_request"
 
 RSpec.describe Jumbo::Client do
   let(:instance) { described_class.new(test: true) }

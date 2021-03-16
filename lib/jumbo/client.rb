@@ -1,7 +1,5 @@
 require "net/http"
-require_relative "response"
-require_relative "coupons_requests"
-require_relative "employees"
+require 'jumbo'
 
 module Jumbo
   class Client
