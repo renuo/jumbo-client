@@ -1,5 +1,5 @@
 require "net/http"
-require 'jumbo'
+require "jumbo"
 
 module Jumbo
   class Client
