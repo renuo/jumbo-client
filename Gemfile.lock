@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-client (0.3.1)
+    jumbo-client (0.4.0)
       activemodel (>= 5.0.0)
       zeitwerk (>= 2.0.0)
 
@@ -64,7 +64,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby

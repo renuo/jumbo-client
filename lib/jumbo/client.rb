@@ -18,7 +18,7 @@ module Jumbo
       base_url: nil,
       logger: NoLogger.new)
       @api_key = api_key
-      @base_url = base_url || ENV["JUMBO_CLIENT_API_URL"] || (test ? "https://loyalty-jumbo-test.accarda.com/" : "https://loyalty-jumbo.accarda.com/")
+      @base_url = base_url || ENV["JUMBO_CLIENT_API_URL"] || (test ? "https://test.jumboservices.ch/" : "https://jumboservices.ch/")
       @logger = logger
     end
 
